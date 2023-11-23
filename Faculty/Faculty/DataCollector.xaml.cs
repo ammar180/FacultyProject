@@ -49,7 +49,7 @@ namespace Faculty
         private void btnOpenData_Click(object sender, RoutedEventArgs e)
         {
             if (txtName.Text != "")
-            {
+            { 
                 var selectedEmployee = faculty.FacultyEmployees.Where(x => x.fac_Name == txtName.Text).ToList();
                 theData.ItemsSource = selectedEmployee.ToList();
             }
