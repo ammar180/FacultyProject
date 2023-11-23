@@ -54,7 +54,7 @@ namespace Faculty
                 theData.ItemsSource = selectedEmployee.ToList();
             }
             else
-                MessageBox.Show("Plz fill name text box!");
+                MessageBox.Show("Please fill name text box!");
         }
     }
 }
