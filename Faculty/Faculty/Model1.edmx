@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FacultyDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="FacultyEmployee">
+          <Key>
+            <PropertyRef Name="fac_Name" />
+          </Key>
+          <Property Name="fac_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="fac_Address" Type="varchar" MaxLength="50" />
+          <Property Name="fac_Age" Type="varchar" MaxLength="50" />
+          <Property Name="fac_Depa" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="FacultyDBModelStoreContainer">
+          <EntitySet Name="FacultyEmployee" EntityType="Self.FacultyEmployee" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FacultyDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="FacultyEmployee">
+          <Key>
+            <PropertyRef Name="fac_Name" />
+          </Key>
+          <Property Name="fac_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fac_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fac_Age" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fac_Depa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="FacultyDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FacultyEmployees" EntityType="Self.FacultyEmployee" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FacultyDBModelStoreContainer" CdmEntityContainer="FacultyDBEntities">
+          <EntitySetMapping Name="FacultyEmployees">
+            <EntityTypeMapping TypeName="FacultyDBModel.FacultyEmployee">
+              <MappingFragment StoreEntitySet="FacultyEmployee">
+                <ScalarProperty Name="fac_Name" ColumnName="fac_Name" />
+                <ScalarProperty Name="fac_Address" ColumnName="fac_Address" />
+                <ScalarProperty Name="fac_Age" ColumnName="fac_Age" />
+                <ScalarProperty Name="fac_Depa" ColumnName="fac_Depa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
