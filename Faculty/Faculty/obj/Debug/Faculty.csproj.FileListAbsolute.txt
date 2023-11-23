@@ -44,3 +44,5 @@ C:\Users\IT\Desktop\FacultyProject\Faculty\Faculty\obj\Debug\Faculty.csproj.Core
 C:\Users\IT\Desktop\FacultyProject\Faculty\Faculty\obj\Debug\Faculty.csproj.CopyComplete
 C:\Users\IT\Desktop\FacultyProject\Faculty\Faculty\obj\Debug\Faculty.exe
 C:\Users\IT\Desktop\FacultyProject\Faculty\Faculty\obj\Debug\Faculty.pdb
+C:\Users\IT\Desktop\FacultyProject\Faculty\Faculty\obj\Debug\Page2.g.cs
+C:\Users\IT\Desktop\FacultyProject\Faculty\Faculty\obj\Debug\Page2.baml

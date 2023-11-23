@@ -28,30 +28,36 @@ namespace Faculty
         public DataCollector()
         {
             InitializeComponent();
-            theData.ItemsSource = faculty.FacultyEmployees.ToList();
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            FacultyEmployee emp = new FacultyEmployee();
-            emp.fac_Name = txtName.Text;
-            emp.fac_Age = txtAge.Text;
-            emp.fac_Address = txtAddress.Text;
-            emp.fac_Depa = txtDep.Text;
+            try
+            {
+                FacultyEmployee emp = new FacultyEmployee();
+                emp.fac_Name = txtName.Text;
+                emp.fac_Age = txtAge.Text;
+                emp.fac_Address = txtAddress.Text;
+                emp.fac_Depa = txtDep.Text;
 
-            faculty.FacultyEmployees.AddOrUpdate(emp); 
-            faculty.SaveChanges();
+                faculty.FacultyEmployees.AddOrUpdate(emp);
+                faculty.SaveChanges();
+                MessageBox.Show("Data Saved Successefuly!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
 
-            theData.ItemsSource = faculty.FacultyEmployees.ToList();
+            }
             txtName.Text = txtAge.Text = txtAddress.Text = txtDep.Text = string.Empty;
         }
 
         private void btnOpenData_Click(object sender, RoutedEventArgs e)
         {
             if (txtName.Text != "")
-            { 
-                var selectedEmployee = faculty.FacultyEmployees.Where(x => x.fac_Name == txtName.Text).ToList();
-                theData.ItemsSource = selectedEmployee.ToList();
+            {                
+                Page2 page2 = new Page2(txtName.Text);
+                this.NavigationService.Navigate(page2);
             }
             else
                 MessageBox.Show("Please fill name text box!");

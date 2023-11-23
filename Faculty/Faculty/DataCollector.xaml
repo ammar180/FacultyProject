@@ -10,8 +10,7 @@
 
     <Grid Background="White" RenderTransformOrigin="0.5,0.744">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="89*"/>
-            <ColumnDefinition Width="71*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Label x:Name="Name" Content="Name" HorizontalAlignment="Left" Margin="70,112,0,0" VerticalAlignment="Top" Height="51" Width="130" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24"/>
         <Label x:Name="address" Content="Address" HorizontalAlignment="Left" Margin="70,168,0,0" VerticalAlignment="Top" Height="51" Width="130" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24"/>
@@ -24,7 +23,6 @@
         <TextBox x:Name="txtDep" HorizontalAlignment="Left" Margin="205,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" FontSize="22"/>
         <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="70,370,0,0" VerticalAlignment="Top" Height="35" Width="110" FontSize="22" Click="btnSave_Click"/>
         <Button x:Name="btnOpenData" Content="Open Data" HorizontalAlignment="Left" Margin="280,370,0,0" VerticalAlignment="Top" Height="35" Width="120" FontSize="22" Click="btnOpenData_Click"/>
-        <DataGrid x:Name="theData" Grid.Column="1" d:ItemsSource="{d:SampleData ItemCount=5}"/>
 
     </Grid>
 </Page>
